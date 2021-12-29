@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProjectsComponents() {
-  const { projects, cards } = useContext(AuthContext);
+  const { projects } = useContext(AuthContext);
 
   const classes = useStyles();
   return (

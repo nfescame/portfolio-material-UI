@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "@material-ui/core";
-import { blue, blueGrey, grey } from "@material-ui/core/colors";
+import { blue, blueGrey } from "@material-ui/core/colors";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { AuthContext } from "./context/index";
 
