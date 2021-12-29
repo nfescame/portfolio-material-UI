@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider } from "@material-ui/core";
+import { blue, blueGrey, grey } from "@material-ui/core/colors";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { AuthContext } from "./context/index";
 
-function App() {
+import Home from "./Home";
+
+export default function App() {
+  const { darkMode } = React.useContext(AuthContext);
+  const theme = createMuiTheme({
+    typography: {
+      fontFamily: [
+        "Fuzzy Bubbles",
+        "cursive",
+        "Lato",
+        "sans",
+        "serif",
+        "Lora",
+        "Noto Serif Display",
+        "Pushster",
+        "cursive",
+        "Zen Antique Soft",
+        "Zen Kurenaido",
+        "sans",
+      ],
+    },
+    spacing: 4,
+    palette: {
+      type: darkMode ? "dark" : "light",
+      primary: blueGrey,
+      secondary: blue,
+      background: {
+        git: !darkMode ? "#232323" : "#fff",
+        dark: darkMode ? "#303030" : "#e5e5e5e5",
+        paper: darkMode ? "#232323" : "#fff",
+      },
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   );
 }
-
-export default App;
