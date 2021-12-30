@@ -46,9 +46,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function DrawerComponent() {
-  const { appBarOpen, competencias } = React.useContext(AuthContext);
+  const { appBarOpen, skills } = React.useContext(AuthContext);
   const [open, setOpen] = React.useState(false);
-
   const handleClick = () => {
     setOpen(!open);
   };
@@ -101,7 +100,7 @@ export default function DrawerComponent() {
 
               <Collapse in={open} timeout='auto' unmountOnExit>
                 <List component='div' disablePadding>
-                  {competencias.cards.map((item) => {
+                  {skills.map((item) => {
                     return (
                       <Button sx={{ pl: 4 }}>
                         <ListItemIcon>

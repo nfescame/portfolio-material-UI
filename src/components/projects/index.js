@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { makeStyles, Box, Toolbar, Typography, Grid } from "@material-ui/core";
 
 import CardComponent from "./card";
+import SkeletonComponent from "./skeleton";
 
 import { AuthContext } from "../../context/index";
 
@@ -17,8 +18,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProjectsComponents() {
-  const { projects } = useContext(AuthContext);
-
+  const { cards } = useContext(AuthContext);
   const classes = useStyles();
   return (
     <Box className={classes.projects}>
@@ -28,13 +28,17 @@ export default function ProjectsComponents() {
       </Typography>
 
       <Grid container>
-        {projects.cards.map((item, index) => {
-          return (
-            <Grid key={index} item lg={3} md={4} sm={6} xs={12}>
-              <CardComponent item={item} />
-            </Grid>
-          );
-        })}
+        {cards ? (
+          cards.map((item, index) => {
+            return (
+              <Grid key={index} item lg={3} md={4} sm={6} xs={12}>
+                <CardComponent item={item} />
+              </Grid>
+            );
+          })
+        ) : (
+          <SkeletonComponent />
+        )}
       </Grid>
     </Box>
   );
