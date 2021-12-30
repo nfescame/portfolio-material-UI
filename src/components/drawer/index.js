@@ -39,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
     borderRight: "none",
   },
   listItemText: {
-    fontSize: 16,
+    fontSize: 18,
+    fontWeight: 900,
     color: theme.palette.primary.main,
   },
   toolbar: theme.mixins.toolbar,
@@ -93,7 +94,12 @@ export default function DrawerComponent() {
                   <ListItemIcon>
                     <CodeIcon />
                   </ListItemIcon>
-                  <ListItemText primary='Skills' />
+                  <ListItemText
+                    classes={{
+                      primary: classes.listItemText,
+                    }}
+                    primary='Skills'
+                  />
                   {open ? <ExpandLess /> : <ExpandMore />}
                 </Button>
               </ListItem>
@@ -106,7 +112,12 @@ export default function DrawerComponent() {
                         <ListItemIcon>
                           <StarBorder />
                         </ListItemIcon>
-                        <ListItemText primary={item.title} />
+                        <ListItemText
+                          classes={{
+                            primary: classes.listItemText,
+                          }}
+                          primary={item.title}
+                        />
                       </Button>
                     );
                   })}

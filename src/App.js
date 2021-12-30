@@ -1,6 +1,13 @@
 import React from "react";
 import { ThemeProvider } from "@material-ui/core";
-import { blue, blueGrey } from "@material-ui/core/colors";
+import {
+  blue,
+  blueGrey,
+  deepOrange,
+  deepPurple,
+  indigo,
+  red,
+} from "@material-ui/core/colors";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { AuthContext } from "./context/index";
 
@@ -28,7 +35,7 @@ export default function App() {
     spacing: 4,
     palette: {
       type: darkMode ? "dark" : "light",
-      primary: blueGrey,
+      primary: blue,
       secondary: blue,
       background: {
         git: !darkMode ? "#232323" : "#fff",

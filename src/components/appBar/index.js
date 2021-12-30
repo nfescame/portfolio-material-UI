@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 33,
     marginRight: 15,
   },
+  title: {
+    fontWeight: 900,
+    color: theme.palette.primary.main,
+  },
 }));
 
 export default function AppBarComponent() {
@@ -56,7 +60,7 @@ export default function AppBarComponent() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant='h6' color='primary'>
+          <Typography variant='h5' className={classes.title}>
             Portfolio
           </Typography>
           <div className={classes.grow} />
