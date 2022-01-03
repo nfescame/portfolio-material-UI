@@ -10,10 +10,10 @@ export default function SkeletonComponent() {
         {Array.from(new Array(8)).map((_, index) => {
           return (
             <Grid key={index} item lg={3} md={4} sm={6} xs={12}>
-              <Box p={5}>
-                <Skeleton variant='rectangular' width={345} height={150} />
-                <Skeleton variant='text' width={345} height={50} />
-                <Skeleton variant='text' width={345} height={50} />
+              <Box p={4}>
+                <Skeleton variant='rectangular' width={335} height={160} />
+                <Skeleton variant='text' width={335} height={50} />
+                <Skeleton variant='text' width={335} height={50} />
               </Box>
             </Grid>
           );
